@@ -1,0 +1,41 @@
+---
+interface Props {
+  name: 'arrow-right' | 'arrow-up-right' | 'mail' | 'vcard' | 'whatsapp' | 'linkedin';
+}
+
+const { name } = Astro.props;
+---
+
+{name === 'arrow-right' && (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" focusable="false">
+    <path d="M5 12h14m-7-7 7 7-7 7" />
+  </svg>
+)}
+{name === 'arrow-up-right' && (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" focusable="false">
+    <path d="M7 7h10v10M7 17 17 7" />
+  </svg>
+)}
+{name === 'mail' && (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" focusable="false">
+    <path d="m22 7-9 5.73a2 2 0 0 1-2 0L2 7" />
+    <rect width="20" height="16" x="2" y="4" rx="2" />
+  </svg>
+)}
+{name === 'vcard' && (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" focusable="false">
+    <path d="M16 2v2m1.92 17a6 6 0 1 0-12 0M8 2v2" />
+    <circle cx="12" cy="11" r="4" />
+    <rect width="18" height="18" x="3" y="3" rx="2" />
+  </svg>
+)}
+{name === 'whatsapp' && (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+    <path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97s-.47-.14-.67.15-.76.97-.94 1.17-.34.22-.64.07-1.26-.46-2.4-1.47a9 9 0 0 1-1.64-2.06c-.18-.3-.02-.46.13-.6.13-.14.3-.35.44-.53.15-.17.2-.3.3-.5s.05-.36-.03-.51l-.91-2.21c-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.26.3-1.03 1.02-1.03 2.48s1.06 2.88 1.21 3.08 2.1 3.2 5.08 4.48q1.04.44 1.7.63c.7.22 1.35.2 1.86.11.57-.08 1.76-.71 2-1.4.26-.7.26-1.3.18-1.42-.07-.13-.27-.2-.57-.35m-5.42 7.4A10 10 0 0 1 7 20.42l-.36-.22-3.74.99 1-3.65-.23-.38a10 10 0 0 1-1.51-5.26 9.9 9.9 0 0 1 16.87-6.98 9.8 9.8 0 0 1 2.9 7 9.9 9.9 0 0 1-9.89 9.88m8.41-18.3a11.8 11.8 0 0 0-8.4-3.5 11.9 11.9 0 0 0-10.3 17.84L.05 24l6.31-1.65a12 12 0 0 0 5.69 1.44c6.55 0 11.89-5.33 11.9-11.89a11.8 11.8 0 0 0-3.49-8.41" />
+  </svg>
+)}
+{name === 'linkedin' && (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+    <path d="M20.45 20.45h-3.56v-5.57c0-1.32-.02-3.03-1.85-3.03-1.85 0-2.13 1.44-2.13 2.94v5.66H9.35V9h3.42v1.56h.04a3.8 3.8 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12m1.78 13.02H3.56V9h3.56zM22.22 0H1.78C.8 0 0 .77 0 1.73v20.54C0 23.23.8 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0" />
+  </svg>
+)}

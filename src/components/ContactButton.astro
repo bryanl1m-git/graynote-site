@@ -1,0 +1,31 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  href: string;
+  label: string;
+  detail: string;
+  icon: 'vcard' | 'whatsapp' | 'mail' | 'linkedin';
+  variant?: 'primary' | 'tonal';
+  download?: string;
+}
+
+const { href, label, detail, icon, variant = 'tonal', download } = Astro.props;
+---
+
+<a
+  class:list={['contact', variant === 'primary' && 'contact--primary']}
+  href={href}
+  download={download}
+>
+  <span class="contact-icon">
+    <Icon name={icon} />
+  </span>
+  <span class="contact-text">
+    <span class="contact-label">{label}</span>
+    <span class="contact-detail">{detail}</span>
+  </span>
+  <span class="contact-arrow">
+    <Icon name="arrow-up-right" />
+  </span>
+</a>

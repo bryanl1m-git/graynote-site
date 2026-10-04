@@ -1,0 +1,76 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactButton from '../components/ContactButton.astro';
+---
+
+<Base
+  title="Bryan Lim · Graynote Labs"
+  description="Bryan Lim, Wordsmith at Graynote Labs. Save my contact, or reach me on WhatsApp, email or LinkedIn."
+  canonical="https://graynote.io/bryan"
+  ogType="profile"
+  ogTitle="Bryan Lim · Graynote Labs"
+  ogDescription="Wordsmith. Paint the World."
+  ogUrl="https://graynote.io/bryan"
+  ogImage="https://graynote.io/img/bryan-photo-800.jpg"
+  twitterCard="summary"
+  bodyClass="bryan"
+>
+  <div class="top">
+    <Header variant="bryan" />
+    <main class="card-column">
+      <div class="profile">
+        <picture>
+          <source
+            type="image/webp"
+            srcset="/img/bryan-photo-400.webp 400w, /img/bryan-photo-800.webp 800w"
+            sizes="136px"
+          />
+          <img
+            class="avatar"
+            src="/img/bryan-photo-400.jpg"
+            srcset="/img/bryan-photo-400.jpg 400w, /img/bryan-photo-800.jpg 800w"
+            sizes="136px"
+            alt="Bryan Lim"
+            width="136"
+            height="136"
+          />
+        </picture>
+        <h1 class="name">Bryan Lim</h1>
+        <span class="rule" aria-hidden="true"></span>
+        <p class="title">Wordsmith</p>
+        <p class="bio">Paint the World</p>
+      </div>
+      <nav class="contacts" aria-label="Contact Bryan">
+        <ContactButton
+          variant="primary"
+          href="/bryan.vcf"
+          download="bryan-lim.vcf"
+          icon="vcard"
+          label="Save contact"
+          detail="Add to your phone (vCard)"
+        />
+        <ContactButton
+          href="https://wa.me/60102201674"
+          icon="whatsapp"
+          label="WhatsApp"
+          detail="010-220 1674"
+        />
+        <ContactButton
+          href="mailto:bryan.lim@graynote.io"
+          icon="mail"
+          label="Email"
+          detail="bryan.lim@graynote.io"
+        />
+        <ContactButton
+          href="https://www.linkedin.com/in/bryan-lsw/"
+          icon="linkedin"
+          label="LinkedIn"
+          detail="linkedin.com/in/bryan-lsw"
+        />
+      </nav>
+    </main>
+  </div>
+  <Footer variant="bryan" />
+</Base>

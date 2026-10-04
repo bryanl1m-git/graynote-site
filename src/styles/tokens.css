@@ -1,0 +1,150 @@
+/* Graynote – Website · design tokens
+   Source: Figma file ZAgMPeBA5JsYnn8TQqvqSe (exported 2026-10-04)
+   Font: Montserrat (Google Fonts) stands in for Gotham, which isn't available.
+   Load it with:
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+   Mobile-first: the defaults below are the 390 design; the 1440 design applies from 1024px. */
+
+:root {
+  /* ---------- Colour · primitives ---------- */
+  --gray-charcoal:      #333333;
+  --gray-charcoal-soft: #4D4D4E;
+  --gray-charcoal-deep: #1F1F1F;
+  --gray-charcoal-72:   #333333B8;            /* 72% charcoal = rgb(51 51 51 / 0.72) → #6C6C6C on white (5.3:1), #656565 on #E6E6E6 (4.7:1). WCAG AA */
+  --gray-dot:           #D5D5D5;
+  --gray-light:         #E6E6E6;
+  --gray-pressed:       #C9C9C9;
+  --base-white:         #FFFFFF;
+
+  /* ---------- Colour · semantic ---------- */
+  --color-bg-page:      var(--base-white);
+  --color-bg-subtle:    var(--gray-light);
+  --color-bg-inverse:   var(--gray-charcoal);
+  --color-text-primary: var(--gray-charcoal);
+  --color-text-muted:   var(--gray-charcoal-72);
+  --color-text-inverse: var(--base-white);
+  --color-text-inverse-muted: var(--gray-light);
+  --color-border-subtle: var(--gray-light);
+  --color-border-strong: var(--gray-charcoal);
+  --color-pattern-dot:  var(--gray-dot);
+
+  --color-action-primary-bg:         var(--gray-charcoal);
+  --color-action-primary-bg-hover:   var(--gray-charcoal-soft);
+  --color-action-primary-bg-pressed: var(--gray-charcoal-deep);
+  --color-action-primary-text:       var(--base-white);
+
+  --color-action-secondary-bg:         var(--base-white);
+  --color-action-secondary-bg-hover:   var(--gray-light);
+  --color-action-secondary-bg-pressed: var(--gray-dot);
+  --color-action-secondary-text:       var(--gray-charcoal);
+
+  /* "tonal" = the light-gray contact buttons on /bryan */
+  --color-action-tonal-bg:         var(--gray-light);
+  --color-action-tonal-bg-hover:   var(--gray-dot);
+  --color-action-tonal-bg-pressed: var(--gray-pressed);
+
+  /* ---------- Spacing ---------- */
+  --space-0: 0px;
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-96: 96px;
+  --space-128: 128px;
+  --space-160: 160px;
+
+  /* ---------- Radii ---------- */
+  --radius-sm: 8px;
+  --radius-md: 12px;    /* buttons, contact buttons, venture mark */
+  --radius-lg: 24px;    /* venture card */
+  --radius-xl: 32px;    /* footer tab (top corners only) */
+  --radius-pill: 999px; /* avatar */
+
+  /* ---------- Type · base ---------- */
+  --font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* ---------- Type · styles (Figma text styles, exact) ----------
+     size / line-height / letter-spacing / weight. Letter-spacing = Figma % ÷ 100 in em. */
+  --text-display-xl-size: 128px; --text-display-xl-lh: 1;    --text-display-xl-ls: -0.035em; --text-display-xl-weight: 700;
+  --text-display-l-size: 64px;   --text-display-l-lh: 1.08;  --text-display-l-ls: -0.025em;  --text-display-l-weight: 700;
+  --text-display-m-size: 44px;   --text-display-m-lh: 1.12;  --text-display-m-ls: -0.02em;   --text-display-m-weight: 700;
+  --text-heading-l-size: 32px;   --text-heading-l-lh: 1.2;   --text-heading-l-ls: -0.01em;   --text-heading-l-weight: 700;
+  --text-heading-s-size: 20px;   --text-heading-s-lh: 1.3;   --text-heading-s-ls: -0.005em;  --text-heading-s-weight: 700;
+  --text-body-l-size: 24px;      --text-body-l-lh: 1.5;      --text-body-l-ls: -0.005em;     --text-body-l-weight: 500;
+  --text-body-m-size: 18px;      --text-body-m-lh: 1.55;     --text-body-m-ls: 0em;          --text-body-m-weight: 500;
+  --text-body-s-size: 15px;      --text-body-s-lh: 1.5;      --text-body-s-ls: 0em;          --text-body-s-weight: 500;
+  --text-label-caps-size: 12px;  --text-label-caps-lh: 1.4;  --text-label-caps-ls: 0.2em;    --text-label-caps-weight: 700;  /* uppercase */
+  --text-label-venture-size: 16px; --text-label-venture-lh: 1.3; --text-label-venture-ls: 0.14em; --text-label-venture-weight: 700; /* uppercase */
+  --text-button-m-size: 16px;    --text-button-m-lh: 1.2;    --text-button-m-ls: 0.005em;    --text-button-m-weight: 700;
+  --text-button-s-size: 14px;    --text-button-s-lh: 1.2;    --text-button-s-ls: 0.005em;    --text-button-s-weight: 700;
+
+  /* ---------- Type · roles (MOBILE, 390 design) ---------- */
+  --hero-size: 56px;  --hero-lh: 1.08; --hero-ls: -0.025em;   /* Display/L metrics at 56px */
+  --hero-sub-size: var(--text-body-m-size); --hero-sub-lh: var(--text-body-m-lh); --hero-sub-ls: var(--text-body-m-ls);
+  --paragraph-size: var(--text-body-m-size); --paragraph-lh: var(--text-body-m-lh); --paragraph-ls: var(--text-body-m-ls);
+  --cta-size: var(--text-heading-l-size); --cta-lh: var(--text-heading-l-lh); --cta-ls: var(--text-heading-l-ls);
+
+  /* ---------- Layout (MOBILE) ---------- */
+  --page-pad-x: 24px;
+  --content-max: 1312px;
+  --header-pad-y: 24px;
+  --logo-width: 112px;          /* height 27px */
+  --hero-pad-top: 96px;
+  --hero-pad-bottom: 128px;
+  --hero-gap: 24px;
+  --ao-hero-width: 48px;        /* height 21px */
+  --section-pad-bottom: 96px;
+  --section-rule-gap: 32px;     /* 1px rule → row */
+  --section-label-gap: 24px;    /* label → content (stacked) */
+  --cta-gap: 24px;
+  --cta-button-gap: 56px;       /* subline → button */
+  --footer-inset-x: 16px;
+  --footer-pad: 48px 24px;
+  --avatar-size: 120px;
+
+  /* ---------- Pattern · dot grid ---------- */
+  --dot-color: var(--gray-dot);
+  --dot-size: 1.3px;            /* radius → 2.6px dot */
+  --dot-pitch: 24px;
+
+  /* ---------- Motion (suggested; Figma swaps states instantly) ---------- */
+  --duration-fast: 120ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Fluid hero between the two designs: 56px @390 → 128px @1440. */
+:root { --hero-size: clamp(3.5rem, 1.829rem + 6.857vw, 8rem); }
+
+/* ---------- DESKTOP (1440 design) from 1024px ---------- */
+@media (min-width: 1024px) {
+  :root {
+    --hero-lh: 1; --hero-ls: -0.035em;                     /* Display/XL */
+    --hero-sub-size: var(--text-body-l-size); --hero-sub-lh: var(--text-body-l-lh); --hero-sub-ls: var(--text-body-l-ls);
+    --paragraph-size: var(--text-body-l-size); --paragraph-lh: var(--text-body-l-lh); --paragraph-ls: var(--text-body-l-ls);
+    --cta-size: var(--text-display-l-size); --cta-lh: var(--text-display-l-lh); --cta-ls: var(--text-display-l-ls);
+
+    --page-pad-x: 64px;
+    --header-pad-y: 32px;
+    --logo-width: 152px;        /* height 36px */
+    --hero-pad-top: 160px;
+    --hero-pad-bottom: 160px;
+    --hero-gap: 32px;
+    --ao-hero-width: 64px;      /* height 28px */
+    --section-pad-bottom: 128px;
+    --section-rule-gap: 64px;
+    --label-col: 352px;         /* + 960px content column = 1312 */
+    --cta-gap: 32px;
+    --cta-button-gap: 80px;
+    --footer-inset-x: 32px;
+    --footer-pad: 64px;
+    --avatar-size: 136px;
+  }
+}

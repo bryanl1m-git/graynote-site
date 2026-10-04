@@ -1,0 +1,24 @@
+---
+interface Props {
+  variant?: 'home' | 'bryan';
+}
+
+const { variant = 'home' } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="tab">
+    <img src="/svg/graynote-labs-light.svg" alt="Graynote Labs" width="120" height="28" />
+    <div class="meta">
+      {
+        variant === 'home' ? (
+          <a href="mailto:bryan.lim@graynote.io">bryan.lim@graynote.io</a>
+        ) : (
+          <a href="https://graynote.io/">Visit graynote.io →</a>
+        )
+      }
+      <span>© {year} Graynote Labs</span>
+    </div>
+  </div>
+</footer>

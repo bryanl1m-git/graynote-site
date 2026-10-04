@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://graynote.io/sitemap-index.xml

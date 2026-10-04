@@ -1,0 +1,26 @@
+---
+import Button from './Button.astro';
+
+interface Props {
+  variant?: 'home' | 'bryan';
+}
+
+const { variant = 'home' } = Astro.props;
+---
+
+<header class:list={['site-header', variant === 'bryan' && 'site-header--bryan', variant === 'bryan' && 'shell']}>
+  {
+    variant === 'home' ? (
+      <a href="/" class="logo">
+        <img src="/svg/graynote-labs-charcoal.svg" alt="Graynote Labs" width="152" height="36" />
+      </a>
+      <Button href="mailto:bryan.lim@graynote.io" variant="link">Let's talk</Button>
+    ) : (
+      <a href="https://graynote.io/" class="logo logo--bryan">
+        <img class="logo-mark" src="/svg/ao-monogram-charcoal.svg" alt="Graynote Labs" width="44" height="19" />
+        <img class="logo-word" src="/svg/graynote-labs-charcoal.svg" alt="Graynote Labs" width="152" height="36" />
+      </a>
+      <span class="label">Nice to meet you</span>
+    )
+  }
+</header>

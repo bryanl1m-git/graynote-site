@@ -1,0 +1,16 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  href: string;
+  variant?: 'primary' | 'secondary' | 'link';
+}
+
+const { href, variant = 'primary' } = Astro.props;
+const showArrow = variant === 'primary' || variant === 'link';
+---
+
+<a class:list={['btn', `btn--${variant}`]} href={href}>
+  <span class="btn-label"><slot /></span>
+  {showArrow && <Icon name="arrow-right" />}
+</a>

@@ -1,0 +1,92 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Button from '../components/Button.astro';
+import { ventures } from '../data/ventures';
+---
+
+<Base
+  title="Graynote Labs"
+  description="We play in the gray, so you don’t have to. Messy problems in, clear results out."
+  canonical="https://graynote.io/"
+  ogType="website"
+  ogSiteName={true}
+  ogTitle="Graynote Labs"
+  ogDescription="We play in the gray, so you don’t have to."
+  ogUrl="https://graynote.io/"
+  twitterCard="summary_large_image"
+>
+  <div class="top">
+    <div class="shell">
+      <Header />
+      <section class="hero">
+        <img class="ao" src="/svg/ao-monogram-charcoal.svg" alt="" aria-hidden="true" width="64" height="28" />
+        <h1>We play in the gray, so you don’t have&nbsp;to.</h1>
+        <p class="hero-sub">Messy problems in, clear results out.</p>
+      </section>
+    </div>
+  </div>
+  <main>
+    <div class="shell">
+      <section class="row" aria-labelledby="how">
+        <div class="row-inner">
+          <h2 id="how" class="label">How we work</h2>
+          <p class="paragraph">Graynote takes on all kinds of work, and treats every piece the same way. We listen first, work out what the thing really needs, then see it through, quietly and properly, until it’s done. Most of it starts with someone or something we already know. We’d like to keep it that way.</p>
+        </div>
+      </section>
+      {
+        ventures.length > 0 && (
+          <section class="row ventures" id="ventures" aria-labelledby="ventures-label">
+            <div class="row-inner">
+              <h2 id="ventures-label" class="label">Ventures</h2>
+              <div class="ventures-body">
+                <p class="section-heading">A few things of our own.</p>
+                <ul class="venture-grid" role="list">
+                  {ventures.map((venture) => (
+                    <li>
+                      {venture.href ? (
+                        <a class="venture-card" href={venture.href}>
+                          <span class="venture-mark" aria-hidden="true">
+                            {venture.initial}
+                            <i class="dot"></i>
+                          </span>
+                          <div class="venture-text">
+                            <h3 class="venture-name">{venture.name}</h3>
+                            <p class="venture-line">{venture.line}</p>
+                          </div>
+                        </a>
+                      ) : (
+                        <article class="venture-card">
+                          <span class="venture-mark" aria-hidden="true">
+                            {venture.initial}
+                            <i class="dot"></i>
+                          </span>
+                          <div class="venture-text">
+                            <h3 class="venture-name">{venture.name}</h3>
+                            <p class="venture-line">{venture.line}</p>
+                          </div>
+                        </article>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </section>
+        )
+      }
+      <section class="row" aria-labelledby="next">
+        <div class="row-inner">
+          <h2 id="next" class="label">Next</h2>
+          <div class="cta">
+            <p class="cta-heading">Got something in mind?</p>
+            <p class="cta-sub">Start with an email. We’ll take it from there.</p>
+            <Button href="mailto:bryan.lim@graynote.io">Let's talk</Button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Base>
