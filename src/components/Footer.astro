@@ -1,4 +1,6 @@
 ---
+import Icon from './Icon.astro';
+
 interface Props {
   variant?: 'home' | 'bryan';
 }
@@ -15,7 +17,7 @@ const year = new Date().getFullYear();
         variant === 'home' ? (
           <a href="mailto:bryan.lim@graynote.io">bryan.lim@graynote.io</a>
         ) : (
-          <a href="https://graynote.io/">Visit graynote.io →</a>
+          <a class="visit" href="https://graynote.io/">Visit graynote.io <Icon name="arrow-right" /></a>
         )
       }
       <span>© {year} Graynote Labs</span>

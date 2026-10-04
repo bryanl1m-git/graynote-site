@@ -672,3 +672,7 @@ ul {
     scroll-behavior: auto !important;
   }
 }
+
+/* Footer "Visit graynote.io" arrow: same SVG as the buttons, ~14px */
+.site-footer .visit { display: inline-flex; align-items: center; gap: 4px; }
+.site-footer .visit svg { width: 14px; height: 14px; flex: none; }
